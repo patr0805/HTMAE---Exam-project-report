@@ -1,4 +1,10 @@
 % Group Report Information: What are the requirements or specifications? What are the capabilities that your device should have?
 
 \section{Requirements}
-The drawing machine should be able to draw on a vertical plane by controlling the line length from two stepper motors to a drawing head. The input should be given as a set of coordinates or an image, and the drawing machine should be able to adjust the line length so as to draw through the desired coordinates. In case of an image, the machine should be able to segment using a threshold, the pixels that need coloring, and deduct an ordered list of coordinates to do so.
+The Drawing Machine should be able to draw on a vertical plane by controlling the line length from two stepper motors to a drawing head. The input should be given as a set of coordinates or an image, and the Drawing Machine should be able to adjust the line length to draw through the desired coordinates. In case of an image, the machine should be able to segment using a threshold, the pixels that need coloring, and deduct an ordered list of coordinates to do so. Because the class How to Make (almost) Anything embraces experimental work and thought process we set a requirement to use as many as the tools available at ITU. In order to complete the project we sought out to 3D print, laser cut, heat bend, code stepper motors, Raspberry Pi\footnote{See \url{https://www.raspberrypi.org/}}, sensors and connect it all electronically.\\
+The goals of the Drawing Machine is:
+\begin{enumerate}
+    \item to have an accuracy to the point of making recognizable drawings\\
+    \item to be able to find the center of the canvas by itself\\
+    \item to draw an uploaded image \\
+\end{enumerate}

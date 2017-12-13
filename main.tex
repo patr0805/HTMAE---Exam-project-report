@@ -95,6 +95,13 @@
 \bibliographystyle{unsrtnat}
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
+\usepackage{xcolor}
+\hypersetup{                                                                                                                                                                                                       
+    colorlinks,                                                                                                                                                                                                    
+    linkcolor={black!50!black},                                                                                                                                                                                    
+    citecolor={blue!50!black},                                                                                                                                                                                     
+    urlcolor={blue!80!black}                                                                                                                                                                                       
+}
 
 
 
@@ -162,13 +169,15 @@
 % You can find documentation about the pdfTeX application at:
 % http://www.tug.org/applications/pdftex
 
+\usepackage{graphicx}   % For billeder (virker ikke)
 
-
+\usepackage{subcaption}
+\usepackage{float}
 
 
 % *** MATH PACKAGES ***
 %
-%\usepackage[cmex10]{amsmath}
+\usepackage[cmex10]{amsmath}
 % A popular package from the American Mathematical Society that provides
 % many useful and powerful commands for dealing with mathematics. If using
 % it, be sure to load this package with the cmex10 option to ensure that
@@ -321,9 +330,49 @@
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
+\usepackage{amssymb}
+\usepackage{listings}
 
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{8} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{8}  % for normal
+\usepackage{color}
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
 
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false            % 
+}}
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand\pythonexternal[2][]{{
+\pythonstyle
+\lstinputlisting[#1]{#2}}}
+
+% Python for inline
+\newcommand\pythoninline[1]{{\pythonstyle\lstinline!#1!}}
+
+  
+
+\usepackage[titletoc]{appendix}
 \begin{document}
+  
 %
 % paper title
 % Titles are generally capitalized except for words such as a, an, and, as,
@@ -416,8 +465,7 @@ The abstract goes here.
 \input{Sections/4_ResultsAnalysis}
 
 \input{Sections/5_Discussion}
- 
-\input{Sections/7_Annexes} 
+  
  
 
 % An example of a floating figure using the graphicx package.
@@ -516,7 +564,7 @@ The abstract goes here.
 
 
 
-\input{Sections/8_Conclusion} 
+\input{Sections/7_Conclusion} 
 
 
 
@@ -539,6 +587,7 @@ The abstract goes here.
 %\input{Sections/6_References}
  
 
+\input{Sections/Annexes.tex} 
 
 % that's all folks
 \end{document}

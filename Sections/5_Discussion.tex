@@ -1,3 +1,16 @@
 %Group Report Information: What are the strengths and shortcomings of your device? Did it match the requirements?  How would you improve/develop it further, if you had time?
 
-\section{Discussion}
+\section{Discussion} 
+\subsection{Improvement}
+\subsubsection{Homing offset}
+To improve on the inaccurate measurement of the wire length, there could be a number of different ways to improve it. One would be to add stronger stepper motors and the reason for that is that we are limited in how close the drawing head can be to head without assistance from the other motor. This means that the end-stop magnet is placed with a length from the drawing head (on the wire) that is relative to what was possible by trial and error. A stronger stepper motor could pull the drawing head as close to the motor as possible to allow for more accurate measurement of wire length and stronger stepper motors would also improve the possibilities of speed. \\
+Another and perhaps better way is to measure the line width from the magnet to the drawing head and hard-code it in the software/firmware. This would improve accuracy, but not speed limitation unlike the change of stepper motor.
+
+\subsubsection{Reed switch placement}
+We have taped the reed switch to the whiteboard which is a quite unprofessional and cheap way. It makes it fragile and it hurts accuracy when they displaces and thus does not trigger only when the endstop magnet gets to the very end. Thus it would be a wise improvement to add a 3D printed holder that would hold it in place against the motorbox.
+
+\subsubsection{Motorbox distance}
+The distance between the motors are fixed at the moment in software. To allow for estimation of the wire length between the motors, we could do so if we knew when the wires are tight. This could be observed using an accelerate or a load cell. A load cell could detect it if the wire went though a hole in the load-cell, then if the wire is tight, it won't hang and thus won't push downwards as much. The accelerometer could be placed on the wire to measure angle.
+
+\subsubsection{Including ideas from other similar projects}
+Our finding of more background material late in the process showed that instead of using spindles, we could have used a pulley-like setup \citep{Vimio:2010:DrawingMachine}. Doing so could have improved accuracy by the spindle not increasing in diameter as a result of wire lying on top of each other. This can seriously affect accuracy as it changes the rate of wire pulled/release per step. With shorter wire we have reduced the significance of this problem, but it must definitely be causing skewed movement. 
