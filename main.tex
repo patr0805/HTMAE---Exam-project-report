@@ -173,7 +173,7 @@
 
 \usepackage{subcaption}
 \usepackage{float}
-
+\usepackage[utf8]{inputenc}
 
 % *** MATH PACKAGES ***
 %
@@ -332,6 +332,7 @@
 \hyphenation{op-tical net-works semi-conduc-tor}
 \usepackage{amssymb}
 \usepackage{listings}
+\usepackage{cleveref}
 
 \DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{8} % for bold
 \DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{8}  % for normal
@@ -380,7 +381,7 @@ showstringspaces=false            %
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{HMAA report}
+\title{How to Make a Drawing Machine}
 
 
 % author names and affiliations
@@ -394,7 +395,7 @@ Email: pebj@itu.dk}
 \IEEEauthorblockA{IT University of Copenhagen\\ 
 Email: jeshe@itu.dk}
 \and
-\IEEEauthorblockN{Jacob Foss}
+\IEEEauthorblockN{Jacob Foss Moustgaard}
 \IEEEauthorblockA{IT University of Copenhagen\\
 Email: jmou@itu.dk }}
 
@@ -431,13 +432,14 @@ Email: jmou@itu.dk }}
 
 % make the title area
 \maketitle
+\thispagestyle{plain}
+\pagestyle{plain}
 
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
-\begin{abstract}
-The abstract goes here.
-\end{abstract}
-
+% \begin{abstract}
+% Design and construction is becoming more and more accessible to anyone, however the need to understand the construction and design 
+% \end{abstract}
 % no keywords
 
 
@@ -583,10 +585,11 @@ The abstract goes here.
 %\IEEEtriggercmd{\enlargethispage{-5in}}
 
 % references section
+\newpage
 \bibliography{Sections/References}
 %\input{Sections/6_References}
  
-
+\newpage
 \input{Sections/Annexes.tex} 
 
 % that's all folks
